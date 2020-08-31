@@ -56,7 +56,7 @@ public class FindClassProcessor extends AbstractProcessor {
                 if (findClass.allowThrowExpection()) {
                     loadClassMethodBuilder.beginControlFlow("try")
                             .addStatement("$T.addClass($T.class.getName(), classLoader.loadClass($S))", bridgeClass, ClassName.get((TypeElement) element), findClass.classPath())
-                            .nextControlFlow("catch ($T e)", Throwable.class)
+                            .nextControlFlow("catch ($T e)", ClassNotFoundException.class)
                             .endControlFlow();
                 } else {
                     loadClassMethodBuilder.addStatement("$T.addClass($T.class.getName(), classLoader.loadClass($S))", bridgeClass, ClassName.get((TypeElement) element), findClass.classPath());
