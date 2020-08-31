@@ -1,0 +1,15 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+// 注解 processor 类，并对其生成 META-INF 的配置信息。
+    implementation 'com.google.auto.service:auto-service:1.0-rc5'
+    // 是帮助我们通过类调用的形式来生成代码。
+    implementation 'com.squareup:javapoet:1.11.1'
+    implementation project(':find-annotations')
+    implementation 'org.apache.commons:commons-lang3:3.5'
+    implementation 'org.apache.commons:commons-collections4:4.1'
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"

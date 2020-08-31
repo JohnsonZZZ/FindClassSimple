@@ -1,0 +1,5 @@
+rootProject.name='FindClass-Sample'
+include ':app'
+include ':find-annotations'
+include ':find-proccesor'
+include ':find-api'
